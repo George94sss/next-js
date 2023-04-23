@@ -3,10 +3,14 @@ import Heading from "../components/Heading";
 import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
-export const getStaticProps = async () => {
+const loadPost = async () => {
   const response = await fetch(`${process.env.API_HOST}/socials`);
   const data = await response.json();
+  return data
+}
 
+export const getStaticProps = async () => {
+  const data = await loadPost()
   if (!data) {
     return {
       notFound: true,

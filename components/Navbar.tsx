@@ -16,7 +16,7 @@ const Navbar:FC = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Image src="/logo.png" width={60} height={60} alt="webDev" />
+        {/* <Image src="/logo.png" width={60} height={60} alt="webDev" /> */}
       </div>
       <div className={styles.links}>
         {navigation.map(({ id, title, path }) => (
