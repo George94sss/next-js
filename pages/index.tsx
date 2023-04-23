@@ -1,3 +1,4 @@
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import Heading from "../components/Heading";
 import Socials from "../components/Socials";
@@ -9,7 +10,8 @@ const loadPost = async () => {
   return data
 }
 
-export const getStaticProps = async () => {
+// export const getStaticProps = async () => {
+  export const getServerSideProps:GetServerSideProps = async () => {
   const data = await loadPost()
   if (!data) {
     return {
