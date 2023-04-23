@@ -1,11 +1,11 @@
+import { FC } from "react";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import ContactInfo from "../../components/ContactInfo";
-import { GetServerSideProps } from "next";
-import {FC} from "react"
-import { contactType } from "../../type";
+import { contactType } from "../../types";
 
 type contactTypeProps = {
-  contact:contactType
+  contact: contactType,
 }
 
 export const getServerSideProps:GetServerSideProps = async (context) => {

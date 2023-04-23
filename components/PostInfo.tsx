@@ -1,9 +1,9 @@
+import { FC } from "react";
 import Heading from "./Heading";
-import {FC} from 'react'
-import { postType } from "../type"; 
+import { postType } from "../types";
 
 type postInfoProps = {
-  post:postType
+  post: postType,
 }
 
 const PostInfo:FC<postInfoProps> = ({ post }) => {

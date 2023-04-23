@@ -1,12 +1,12 @@
+import { FC } from "react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { FC } from "react";
 import Heading from "../../components/Heading";
-import { contactType } from "../../type";
+import { contactType } from "../../types";
 
 type contactsTypeProps = {
-  contacts:[contactType]
+  contacts: [contactType],
 }
 
 export const getStaticProps:GetStaticProps = async () => {
@@ -24,22 +24,20 @@ export const getStaticProps:GetStaticProps = async () => {
   }
 };
 
-const Contacts:FC<contactsTypeProps> = ({ contacts }) => { 
-  return (
-    <>
-      <Head>
-        <title>Contacts</title>
-      </Head>
-      <Heading text="Contacts list:" />
-      <ul>
-        {contacts && contacts.map(({ id, name }) => (
-          <li key={id}>
-            <Link href={`/contacts/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
+const Contacts:FC<contactsTypeProps> = ({ contacts }) => (
+  <>
+    <Head>
+      <title>Contacts</title>
+    </Head>
+    <Heading text="Contacts list:" />
+    <ul>
+      {contacts && contacts.map(({ id, name }) => (
+        <li key={id}>
+          <Link href={`/contacts/${id}`}>{name}</Link>
+        </li>
+      ))}
+    </ul>
+  </>
+);
 
 export default Contacts;

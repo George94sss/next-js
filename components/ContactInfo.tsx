@@ -1,9 +1,9 @@
+import { FC } from "react";
 import Heading from "./Heading";
-import { contactType } from "@/type";
-import {FC} from "react"
+import { contactType } from "../types";
 
-type contactInfoProps ={
-  contact:contactType
+type contactInfoProps = {
+  contact: contactType,
 }
 
 const ContactInfo:FC<contactInfoProps> = ({ contact }) => {
